@@ -29,15 +29,38 @@ class _OpenByPageState extends State<OpenByPage> {
   }
 
   _openItemDetail() {
-    nautilus.openItemDetail(itemID: "41576306115",taoKeParams: nautilus.TaoKeParams(
-        unionId: "", subPid: "mm_26632322_6858406_23810104", pid: "mm_26632322_6858406_23810104", adzoneId: "57328044"));
+
+
+    Map<String, String> taoKeParamsextraParams = new Map();
+    taoKeParamsextraParams['taokeAppkey'] = '24900413';
+
+    Map<String, String> extraParams = new Map();
+    extraParams['isv_code'] = 'appisvcode';
+
+
+    nautilus.openItemDetail(
+        itemID: "591587602964",
+        taoKeParams: nautilus.TaoKeParams(
+            unionId: "",
+            subPid: "mm_114747138_45538443_624654015",
+            pid: "mm_114747138_45538443_624654015",
+            adzoneId: "624654015",
+            extParams:taoKeParamsextraParams
+        ),
+        openType:nautilus.OpenType.NATIVE,
+        schemeType:"taobao_oscheme",
+        extParams:extraParams
+
+    );
+
+
+
   }
 
   _openUrl() {
     nautilus.openUrl(
-        pageUrl:
-            "https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=2165762428&activityId=5698d91c0b474d9caf88279009bda4f3",
-        taoKeParams: nautilus.TaoKeParams(
-            unionId: "", subPid: "mm_26632322_6858406_23810104", pid: "mm_26632322_6858406_23810104", adzoneId: "57328044"));
-  }
+        pageUrl: "https://uland.taobao.com/coupon/edetail?e=ERTS0JCtYnAGQASttHIRqQoOaIothlNYFvWzfpVjfDKAnVXUwZx8IuIslmkmHg9Q%2Fo6dic6nhm3gxS33AuDi7ysm0R7yoZkxDfqEFBOhTcwXFgHKPFWz1Z2%2BeDkiyEM1QNYNjOu4S%2BzIV6LHTHCOse1LRo38GBz3tFguQLGdWuzYhpVVy38fp6zroKjs8vldxfFlZSCevACwmYQwT%2FYTeHui%2Fn%2FQ7Z5VNGW5Obm5c1GH6s3NfzeYtQ%3D%3D&traceId=0bb28d8615617149585712563e"
+    );
+
+    }
 }

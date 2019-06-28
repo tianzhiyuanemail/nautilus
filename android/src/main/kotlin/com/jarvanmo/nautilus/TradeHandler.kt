@@ -76,7 +76,7 @@ internal class TradeHandler(private val registry: PluginRegistry.Registrar) {
         openByPage(AlibcDetailPage(itemID), call, result)
     }
 
-    fun openUrl(call: MethodCall, result: MethodChannel.Result){
+    fun openUrl(call: MethodCall, result: MethodChannel.Result) {
         val pageUrl = call.argument<String?>("pageUrl")
         openByPage(AlibcPage(pageUrl), call, result)
     }
@@ -171,15 +171,17 @@ internal class TradeHandler(private val registry: PluginRegistry.Registrar) {
     }
 
     private fun intToOpenType(type: Int): OpenType = when (type) {
+        // AUTO, NATIVE, H5
+        0 -> OpenType.Auto
         1 -> OpenType.Native
-        2 -> OpenType.H5
-        else -> OpenType.Auto
+        else -> OpenType.H5
     }
 
     private fun intToFailedMode(type: Int) = when (type) {
+        //JUMP_H5, JUMP_DOWNLOAD, JUMP_BROWSER, NONE
+        0 -> AlibcFailModeType.AlibcNativeFailModeJumpH5
         1 -> AlibcFailModeType.AlibcNativeFailModeJumpDOWNLOAD
         2 -> AlibcFailModeType.AlibcNativeFailModeJumpBROWER
-        3 -> AlibcFailModeType.AlibcNativeFailModeNONE
         else -> AlibcFailModeType.AlibcNativeFailModeNONE
     }
 }
