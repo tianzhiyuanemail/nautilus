@@ -24,6 +24,8 @@ A plugin for BaiChuanSDK.
   s.libraries = "z","stdc++","sqlite3.0"
 
 
+  s.swift_version = '4.0'
+
 
 
   s.ios.deployment_target = '8.0'
